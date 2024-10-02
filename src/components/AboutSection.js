@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/AboutSection.module.css";
-import img2 from "../assets/2.jpeg";
-import img3 from "../assets/3.jpeg";
+import img2 from "../assets/IMG1.jpeg";
+import img3 from "../assets/IMG2.jpeg";
 import leftArrow from "../assets/icon-angle-left.svg";
 import rightArrow from "../assets/icon-angle-right.svg";
 
