@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/MainSection.module.css";
 import img1 from "../assets/1.jpeg";
-import img2 from "../assets/2.jpeg";
-import img3 from "../assets/3.jpeg";
+import img2 from "../assets/2.jpg";
+import img3 from "../assets/3.jpg";
+import img4 from "../assets/4.jpg";
+import img5 from "../assets/5.jpg";
 import leftArrow from "../assets/icon-angle-left.svg";
 import rightArrow from "../assets/icon-angle-right.svg";
 
 // Carrusel de imágenes y textos
-const images = [img1, img2, img3];
+const images = [img1, img2, img3, img4, img5];
 const texts = [
   {
     title: "Mejora tu espacio con soluciones creativas",
@@ -52,6 +54,15 @@ const MainSection = () => {
       (prevIndex) => (prevIndex - 1 + texts.length) % texts.length
     );
   };
+
+  // Efecto para cambiar la imagen automáticamente
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      nextImage();
+    }, 4000); // Cambia cada 3 segundos
+
+    return () => clearInterval(imageInterval); // Limpia el intervalo al desmontar el componente
+  }, []);
 
   return (
     <section className={styles.about_section}>
