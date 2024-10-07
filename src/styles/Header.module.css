@@ -1,88 +1,87 @@
 .header {
-    display: flex;
-    align-items: center;
-    right: -50px;
-    position: absolute;
-    top: 0;
-    height: 23%;
-    width: 99%;
-    z-index: 10;
-    top: 10px;
-  }
-  
-  .logo h1 {
-    font-size: 27px;
-    font-weight: bold;
-    color: rgb(5, 4, 4);
-    margin: 0;
-    margin-right: 20px;
-  }
-  
-  /* Agregar transparencia al nav */
-  .nav {
-    background-color: rgba(255, 255, 255, 0.5); /* Transparencia del 50% */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que el logo y la nav se mantengan en extremos opuestos */
+  position: fixed; /* Mantenerlo en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.03); /* Aumentar transparencia, negro con 30% de opacidad */
+}
+
+.logo h1 {
+  font-size: 30px; /* Ajustar tamaño del logo */
+  font-weight: bold;
+  color: rgb(255, 255, 255); /* Color blanco */
+  margin: 0;
+}
+
+.nav {
+  background-color: transparent; /* Barra de navegación sin fondo */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end; /* Alinea los enlaces al extremo derecho */
+  flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.nav_links li a {
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  color: rgba(0, 0, 0); /* Blanco con opacidad del 80% */
+  font-size: 20px; /* Tamaño de fuente aumentado */
+  font-weight: 500;
+  padding: 8px 12px;
+  position: relative; /* Necesario para el efecto de subrayado */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.nav_links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.5); /* Línea de subrayado */
+  transform: scaleX(0); /* Comienza invisible */
+  transform-origin: right; /* El efecto comienza desde la derecha */
+  transition: transform 0.3s ease; /* Animación suave */
+}
+
+.nav_links li a:hover {
+  color: rgba(0, 0, 0); /* Texto blanco sólido al hacer hover */
+}
+
+.nav_links li a:hover::after {
+  transform: scaleX(1); /* Subrayado animado aparece */
+  transform-origin: left; /* La animación se expande hacia la izquierda */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 10px 20px;
-    border-radius: 8px; /* Opcional, para bordes redondeados */
   }
-  
+
   .nav_links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
   }
-  
-  .nav_links li {
-    position: relative;
-  }
-  
+
   .nav_links li a {
-    letter-spacing: 6px;
-    text-decoration: none;
-    color: rgb(5, 4, 4);
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-size: 18px; 
   }
-  
-  .nav_links li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+
+  .logo h1 {
+    font-size: 26px;
   }
-  
-  .nav_links li a:hover::after {
-    transform: scaleX(1);
-  }
-  
-  .nav_links li a:hover {
-    color: #aaa;
-  }
-  
-  /* Responsivo para pantallas pequeñas */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px 20px;
-    }
-  
-    .nav_links {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    .nav_links li a {
-      font-size: 16px;
-    }
-  
-    .logo h1 {
-      font-size: 24px;
-    }
-  }
-  
+}
+
+
