@@ -1,100 +1,132 @@
-.about_section {
+.carousel {
   display: flex;
-  justify-content: space-between; /* las imágenes y el texto estén uno al lado del otro */
   align-items: center;
-  padding: 20px;
-}
-
-.about_image {
+  justify-content: center;
   position: relative;
-  width: 50%; /* Ajusta el tamaño del contenedor de la imagen */
+  width:100%;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.about_image img {
-  width: 100%; /* Ajusta la imagen al contenedor */
-  height: auto;
+.leftarrow,
+.rightarrow {
+  background-color: #7c7c7c;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 18% 19% 18% 19%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+  
+}
+
+.leftarrow:hover,
+.rightarrow:hover {
+  opacity: 1;
+}
+
+/* Estilo para el contenido del carrusel */
+.carouselcontent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: transform 0.8s ease-in-out; /* Transición más suave */
+}
+
+/* Tamaño fijo para las imágenes */
+.carouselimage {
+  width: 60%;
+  height: 566px; /* Fijamos una altura para que no cambien de tamaño */
   object-fit: cover;
-  max-height: 400px; /* Limita la altura de la imagen */
 }
-
-.about_text {
-  width: 45%; /* Ajusta el ancho del texto */
-  padding: 20px;
-  position: relative;
-}
-
-.about_text h3 {
+.titleh1{
   font-family: "League Spartan", sans-serif;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
-.about_text p {
+.descriptionp{
   font-family: "League Spartan", sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
+.carouseldescription {
+  width: 50%;
+  padding: 8%;
+  padding-right: 3%;
+  color: #333;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
 
-.arrow_left,
-.arrow_right {
+/* Contenedor para los botones */
+.carouselbuttons {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(118, 116, 116, 0.5);
+  bottom: -21px;
+  left: 54%;
+  transform: translateX(2%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+}
+
+.carouselbutton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
   border: none;
-  width: 40px;
-  height: 50px;
+  padding: 15%;
   cursor: pointer;
-  display: flex; /* Asegura que el contenido esté centrado */
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  overflow: hidden; /* Asegura que el contenido no se desborde */
-  padding: 0; /* Elimina cualquier padding que pueda afectar el tamaño */
+  transition: background-color 0.3s ease-in-out;
 }
 
-.arrow_left {
-  left: 10px;
+.carouselbutton:hover {
+  background-color: #4b4a4a;
 }
+.enlace{
+  margin-top: 1%;
+  letter-spacing: 5px;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 1%;
+  color: #333;
+  cursor: pointer;
+}
+.enlace:hover{
+  background-color: #e2e0e0;
+  letter-spacing: 6px;
+  font-size:medium ;
+}
+.arrow {
+  font-size: 1.5rem; /* Tamaño de la flecha (puedes ajustarlo) */
+  font-weight: lighter; /* Grosor del texto para hacer la flecha más delgada */
+  color: white; /* Color de la flecha */
+}
+/* Responsividad */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+  }
 
-.arrow_right {
-  right: 10px;
-}
+  .carouselimage,
+  .carouseldescription {
+    width: 100%;
+  }
 
-.arrow_left img,
-.arrow_right img {
-  max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
-  max-height: 100%; /* Asegura que la imagen no sea más alta que el contenedor */
-  width: auto;
-  height: auto;
+  .carouselimage {
+    border-right: none;
+    border-bottom: 2px solid #ddd;
+    height: 300px; /* Ajustamos la altura para pantallas más pequeñas */
+  }
+
+  .leftarrow,
+  .rightarrow {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
 }
-  
-  /* Estilos para los botones de cambio de texto */
-  .text_arrows {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: flex-end;
-  }
-  
-  .arrow_left_text,
-  .arrow_right_text {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    width: 40px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
-  }
-  
-  .arrow_left_text img,
-  .arrow_right_text img {
-    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
-    max-height: 100%;
-    width: auto;
-    height: auto;
-  }
-  

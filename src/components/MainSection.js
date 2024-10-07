@@ -2,99 +2,110 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/MainSection.module.css";
 import img1 from "../assets/1.jpeg";
 import img2 from "../assets/2.jpg";
-import img3 from "../assets/3.jpg";
-import img4 from "../assets/4.jpg";
-import img5 from "../assets/5.jpg";
+import img3 from "../assets/3.webp";
 import leftArrow from "../assets/icon-angle-left.svg";
 import rightArrow from "../assets/icon-angle-right.svg";
 
-// Carrusel de imágenes y textos
-const images = [img1, img2, img3, img4, img5];
-const texts = [
+const carouselItems = [
   {
+    image: img1,
     title: "Mejora tu espacio con soluciones creativas",
     description:
-      "Ofrecemos calidad inigualable, confort y estilo para propietarios de todo el país. Nuestros expertos combinan forma y función para dar vida a tu visión. Crea un espacio único con nuestra colección y haz que tu hogar refleje tu personalidad y gustos.",
+      "Ofrecemos calidad, confort y estilo únicos para propietarios. Nuestros expertos combinan forma y función para crear tu visión. Transforma tu hogar con nuestra exclusiva colección que refleja tu personalidad.",
   },
   {
+    image: img2,
     title: "Estamos disponibles en todo el mundo",
     description:
-      "Con tiendas en diferentes partes del mundo, es fácil para ti encontrar los muebles perfectos para tu hogar o negocio. Localmente, estamos en las principales ciudades del país. Encuentra la sucursal más cercana con nuestro localizador de tiendas. ¿Tienes alguna duda? Contáctanos hoy mismo.",
+      "Con tiendas globales, encontrar los muebles ideales para tu hogar o negocio es fácil. Usa nuestro localizador de tiendas para ubicar la sucursal más cercana. ¿Tienes dudas? Contáctanos hoy.",
   },
   {
-    title: "Fabricados con los mejores materiales",
+    image: img3,
+    title: "Fabricados con unos de los mejores materiales",
     description:
-      "Nuestros muebles modernos garantizan un nivel de calidad excepcional. Nuestra empresa ha invertido en tecnología avanzada para asegurarse de que cada producto sea lo más perfecto y consistente posible. Con tres décadas de experiencia, entendemos lo que nuestros clientes buscan para sus hogares y oficinas.",
+      "Nuestros muebles garantizan una calidad excepcional. Tras décadas de experiencia, utilizamos tecnología avanzada para asegurar la perfección en cada producto que fabricamos para tu hogar u oficina.",
   },
 ];
 
-
 const MainSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const length = carouselItems.length;
 
-  // Carrusel de imágenes
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
   };
-
-  // Carrusel de textos
-  const nextText = () => {
-    setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-  };
-
-  const prevText = () => {
-    setCurrentTextIndex(
-      (prevIndex) => (prevIndex - 1 + texts.length) % texts.length
-    );
-  };
-
-  // Efecto para cambiar la imagen automáticamente
+//para hacer el carrusel automatico 
   useEffect(() => {
-    const imageInterval = setInterval(() => {
-      nextImage();
-    }, 4000); // Cambia cada 3 segundos
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // Cambia cada 5 segundos
 
-    return () => clearInterval(imageInterval); // Limpia el intervalo al desmontar el componente
-  }, []);
+    return () => clearInterval(interval); // Limpiar el intervalo al desmontar el componente
+  }, [current]);
+
+  if (!Array.isArray(carouselItems) || length === 0) {
+    return null;
+  }
 
   return (
-    <section className={styles.about_section}>
-
-      {/* Carrusel de imágenes */}
-      <div className={styles.about_image}>
-        <img src={images[currentImageIndex]} alt="Carrusel" />
-        <button className={styles.arrow_left} onClick={prevImage}>
-          <img src={leftArrow} alt="Previous" />
-        </button>
-        <button className={styles.arrow_right} onClick={nextImage}>
-          <img src={rightArrow} alt="Next" />
-        </button>
-      </div>
-
-
-      {/* Texto con botones para cambiarlo */}
-      <div className={styles.about_text}>
-        <h3>{texts[currentTextIndex].title}</h3>
-        <p>{texts[currentTextIndex].description}</p>
-
-        {/* Botones para cambiar el texto */}
-        <div className={styles.text_arrows}>
-          <button className={styles.arrow_left_text} onClick={prevText}>
-            <img src={leftArrow} alt="Previous text" />
-          </button>
-          <button className={styles.arrow_right_text} onClick={nextText}>
-            <img src={rightArrow} alt="Next text" />
-          </button>
+    <div className={styles.carousel}>
+      <div className={styles.carouselcontent}>
+        <img
+          src={carouselItems[current].image}
+          alt={carouselItems[current].description}
+          className={styles.carouselimage}
+        />
+        <div className={styles.carouseldescription}>
+          <h1 className={styles.titleh1}>{carouselItems[current].title}</h1>
+          <p className={styles.descriptionp}>{carouselItems[current].description}</p>
+          {/* AQUI AGREGA LA RUTA QUE LLEVA A SHOP*/}
+          <div href="#" className={styles.enlace}>
+            COMPRA AHORA {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="16"
+              viewBox="0 0 50 16"
+            >
+              <line
+                x1="5"
+                y1="8"
+                x2="45"
+                y2="8"
+                stroke="#333333"
+                stroke-width="2"
+              />
+              <polyline
+                points="38,3 45,8 38,13"
+                fill="none"
+                stroke="#333333"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </section>
+      <div className={styles.carouselbuttons}>
+        <button
+          className={styles.carouselbutton}
+          onClick={prevSlide}
+          aria-label="Anterior"
+        >
+          <img src={leftArrow} alt="left" />
+        </button>
+        <button
+          className={styles.carouselbutton}
+          onClick={nextSlide}
+          aria-label="Siguiente"
+        >
+          <img src={rightArrow} alt="right" />
+        </button>
+      </div>
+    </div>
   );
 };
 
