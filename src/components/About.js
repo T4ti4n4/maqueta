@@ -7,7 +7,7 @@ const About = () => {
       <div className={styles.heroContent}>
         <h1>Somos tú mejor aliado para darle un toque especial a tú hogar.</h1>
         <p>
-          Nacimos de llevar lo tradicional un poco más alla, queremos que
+          Nacimos para llevar lo tradicional un poco más alla, queremos que
           disfrutes tus decoraciónes de manera personalizada.
         </p>
         <a href="/home" className={styles.btn}>
