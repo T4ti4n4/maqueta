@@ -50,12 +50,18 @@
     width: 40px;
     height: 50px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
   }
   
   .arrow_left_text img,
   .arrow_right_text img {
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    max-height: 100%;
   }
   
   
