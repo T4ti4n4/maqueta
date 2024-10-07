@@ -24,7 +24,6 @@ const texts = [
   },
 ];
 
-
 // Componente de imagen izquierda
 const LeftImage = () => {
   return (

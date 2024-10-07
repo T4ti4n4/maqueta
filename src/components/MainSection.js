@@ -28,7 +28,6 @@ const texts = [
   },
 ];
 
-
 const MainSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -66,7 +65,6 @@ const MainSection = () => {
 
   return (
     <section className={styles.about_section}>
-
       {/* Carrusel de imágenes */}
       <div className={styles.about_image}>
         <img src={images[currentImageIndex]} alt="Carrusel" />
@@ -77,7 +75,6 @@ const MainSection = () => {
           <img src={rightArrow} alt="Next" />
         </button>
       </div>
-
 
       {/* Texto con botones para cambiarlo */}
       <div className={styles.about_text}>
