@@ -5,6 +5,7 @@ import AboutSection from './components/AboutSection';
 import MainSection from './components/MainSection';
 import Home from './components/Home';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function Page() {
   return (
@@ -24,6 +25,7 @@ function RouteHome() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Page />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,119 @@
+.contactContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    padding: 20px;
+  }
+  
+  .contactList {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombras más intensas */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  
+  .contactList:hover {
+    transform: scale(1); /* Efecto de zoom cuando se pasa el mouse */
+  }
+  
+  .contactTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .contactGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .contactCard {
+    background-color: rgba(255, 255, 255, 0.2); /* Tarjetas con fondo semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde semi-transparente */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Sombras más marcadas */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: slideUp 0.5s ease-in-out forwards; /* Animación de entrada desde abajo */
+  }
+  
+  .contactCard:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombras más grandes al hacer hover */
+  }
+  
+  .contactName {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .contactDescription {
+    font-size: 16px;
+    color: #cccccc; /* Texto gris claro */
+  }
+  
+/* Posicionamiento del botón en la parte superior derecha */
+.buttonContainer {
+  position: fixed; /* Asegúrate de que el botón esté en posición fija */
+  top: 21px; /* Ajusta este valor para mover el botón hacia abajo */
+  right: 30px; /* Ajusta este valor según la distancia que quieras desde el borde derecho */
+  display: flex;
+  justify-content: center;
+  width: auto; /* Ancho automático para que se ajuste al contenido */
+}
+
+/* Estilo del botón */
+.backButton {
+  padding: 12px 24px; /* Tamaño del botón */
+  background-color: rgba(0, 123, 255, 0.6); /* Fondo semi-transparente */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover del botón */
+.backButton:hover {
+  background-color: rgba(0, 86, 179, 0.8);
+  transform: scale(1.1) translateY(-5px); /* Zoom al hacer hover */
+  opacity: 0.9; /* Opacidad reducida al hacer hover */
+}
+
+  /* Animación de entrada para la lista de contactos */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de entrada desde abajo para las tarjetas de contactos */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
