@@ -16,7 +16,7 @@ const Contact = () => {
     { id: 9, name: 'Estefany Del Carmen Muñoz Carrascal', descripcion: 'Colaboradora' },
     { id: 10, name: 'Luisa Villacorte', descripcion: 'Colaboradora' },
     { id: 11, name: 'Luisa Gonzalez', descripcion: 'Colaboradora' },
-    { id: 12, name: 'Wendy Maylin Donneys Samboni', descripcion: 'Colaboradora' },
+    { id: 12, name: 'Lisney Alexandra Sanchez Vega', descripcion: 'Colaboradora' },
   ];
 
   return (
