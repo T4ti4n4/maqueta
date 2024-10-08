@@ -6,6 +6,7 @@ import MainSection from './components/MainSection';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Shop from "./components/Shop"
 
 function Page() {
   return (
@@ -13,6 +14,7 @@ function Page() {
       <Header />
       <MainSection />
       <AboutSection />
+      <Shop />
     </div>
   );
 }
@@ -26,6 +28,7 @@ function RouteHome() {
           <Route path="/home" element={<Page />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </div>
     </Router>
