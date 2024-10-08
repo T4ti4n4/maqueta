@@ -1,0 +1,60 @@
+.container-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titlee{
+    text-align: center;
+}
+.Profile-img{
+width: 150px;
+height: 100px;
+margin-left: 20%;
+border-radius: 15px 15px 15px 15px;
+}
+
+.Profile-card{
+ height: 340px;
+ width: 20%;
+ border-radius: 5%;
+ border: 2px solid black;
+ background-color: whitesmoke;
+ margin-left: 15px;
+}
+
+.Profile-name{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.descripti{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Profile-description{
+    color: black;
+    font-size: x-large;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Profile-button{
+    border-radius: 8% ;
+    border: 2px ;
+    height: 40px;
+    width: 150px;
+    margin-left: 20%;
+    color: blue;
+    background-color: rgb(220, 220, 246);
+    cursor: pointer;
+     transition: background-color 0.2s ease-in-out;
+
+}
+
+.Profile-button:hover{
+background-color: bisque;
+}
+
+.contact{
+    text-align: center;
+}
+
